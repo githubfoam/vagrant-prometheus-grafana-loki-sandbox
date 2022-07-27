@@ -19,7 +19,6 @@ services:
             - promtail-loki
 
     cadvisor:
-        # image: google/cadvisor:v0.33.0
         image: google/cadvisor:latest
         volumes:
             - /:/rootfs:ro
@@ -31,7 +30,6 @@ services:
             - prometheus-cadvisor
 
     prometheus:
-        # image: prom/prometheus:v2.7.1
         image: prom/prometheus:latest
         ports:
             - "9090:9090"
@@ -50,7 +48,6 @@ services:
     grafana:
         depends_on:
             - loki
-        # image: grafana/grafana:6.0.0
         image: grafana/grafana:latest
         ports:
             - "3000:3000"
